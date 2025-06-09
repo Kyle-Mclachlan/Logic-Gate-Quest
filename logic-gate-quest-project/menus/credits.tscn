@@ -1,0 +1,275 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8ewtvmtw218u"]
+
+[ext_resource type="Script" path="res://menus/credits.gd" id="1_ebc3f"]
+[ext_resource type="Texture2D" uid="uid://dkq7xb0qyawnm" path="res://art/backgrounds/credits back.png" id="2_nkj2g"]
+[ext_resource type="FontFile" uid="uid://b4tuvvqas2iw8" path="res://art/fonts/alagard.ttf" id="3_0b06q"]
+[ext_resource type="FontFile" uid="uid://buyb1f51jx7j6" path="res://art/fonts/MedievalSharp-Bold.ttf" id="3_n3w45"]
+[ext_resource type="Texture2D" uid="uid://dmki8cw7cs8xo" path="res://art/backgrounds/credits front.png" id="3_ygd2q"]
+[ext_resource type="FontFile" uid="uid://bhwhajtswh3f" path="res://art/fonts/Augusta.ttf" id="3_yiih1"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ebc3f")
+
+[node name="CreditsBack" type="Sprite2D" parent="."]
+position = Vector2(384, 216)
+texture = ExtResource("2_nkj2g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 94.0
+offset_right = 640.0
+offset_bottom = 907.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "
+
+Game developed by:
+Kyle Mclachlan
+
+
+Game Study is part of
+4th year project at
+Strathclyde University
+
+
+Thank you very much
+for playing through this"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_yiih1")
+theme_override_font_sizes/font_size = 30
+text = "Logic Gate Quest
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+max_lines_visible = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "
+
+External Game assets:
+
+Music:
+
+Songs from an Unmade Forest World (loops)
+by Visager
+source: Free Music Archive
+licensed CC BY-SA 4.0
+
+Overgrown Labrynth - Titlescreen music
+Shoots - Level select and Settings music
+The Great Tree - Credits music
+
+
+Hey Nonny Yes (instrumentals)
+by Nutmeg
+source: Free Music Archive
+licensed CC BY-NC-SA
+
+select songs used for level music
+
+
+Fonts used:
+
+Alagard
+by Hewett Tsoi
+used for Participant info, Circuit annotation,
+Gandalf dialog and Credits
+
+Augusta
+by Dieter Steffmann
+used for Titles and Interactions
+
+MedievalSharp-Bold
+by Wojciech Kalinowski
+used for Settings and Buttons
+
+
+Engine:
+
+This game was made using
+Godot 4.3
+
+Art:
+
+All Art and Sprites painted
+using Piskell-0.14.0
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="visager" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "->Visager Link<-"
+underline = 1
+uri = "https://freemusicarchive.org/music/Visager/Songs_from_an_Unmade_Forest_World"
+
+[node name="nutmeg" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "->Nutmeg Link<-"
+underline = 1
+uri = "https://freemusicarchive.org/music/Nutmeg/hey-nonny-yes-instrumentals"
+
+[node name="godot" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "->Godot Link<-"
+underline = 1
+uri = "https://godotengine.org/"
+
+[node name="piskel" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "->Piskel Link<-"
+underline = 1
+uri = "https://www.piskelapp.com/"
+
+[node name="alagard" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "->Alagard Link<-"
+underline = 1
+uri = "https://www.dafont.com/alagard.font"
+
+[node name="augusta" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "->Augusta Link<-"
+underline = 1
+uri = "https://www.dafont.com/augusta.font"
+
+[node name="medieval shard" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "->Medieval-Sharp Link<-"
+underline = 1
+uri = "https://www.dafont.com/medieval-sharp.font"
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_yiih1")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+max_lines_visible = 2
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer2"]
+layout_mode = 2
+text = "                                "
+
+[node name="visager2" type="LinkButton" parent="VBoxContainer/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_0b06q")
+text = "->Post Game User Survey Link<-"
+underline = 1
+uri = "https://qualtricsxmvkmwpqsk4.qualtrics.com/jfe/form/SV_bqgfmbvQQrKIybA"
+
+[node name="CreditsFront" type="Sprite2D" parent="."]
+position = Vector2(384, 216)
+texture = ExtResource("3_ygd2q")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 27.0
+offset_right = 447.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_yiih1")
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="title screen" type="Button" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 376.0
+offset_right = 506.0
+offset_bottom = 409.0
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_n3w45")
+theme_override_font_sizes/font_size = 20
+text = "Return To Title Screen
+"
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="title screen" to="." method="_on_title_screen_pressed"]

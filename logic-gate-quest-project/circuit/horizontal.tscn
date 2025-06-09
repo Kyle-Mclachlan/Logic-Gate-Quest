@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1xennrbxtgfw"]
+
+[ext_resource type="Texture2D" uid="uid://cqfi6ivonkvh" path="res://art/objects/wire/horizontal off.png" id="1_bbgjg"]
+[ext_resource type="Script" path="res://scripts/horizontal.gd" id="2_m4vlp"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_bbgjg")
+script = ExtResource("2_m4vlp")

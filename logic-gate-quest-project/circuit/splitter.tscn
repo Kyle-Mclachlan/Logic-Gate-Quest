@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c84t74kkjcw1i"]
+
+[ext_resource type="Texture2D" uid="uid://cg2jfiykjmn0h" path="res://art/objects/wire/splitter off.png" id="1_addwx"]
+[ext_resource type="Script" path="res://scripts/splitter.gd" id="2_feu4d"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_addwx")
+script = ExtResource("2_feu4d")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://jrf62ji20o7o"]
+
+[ext_resource type="Texture2D" uid="uid://u164or6x70ig" path="res://art/objects/wire/outlet off.png" id="1_w5d5a"]
+[ext_resource type="Script" path="res://scripts/outlet.gd" id="2_r07t5"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_w5d5a")
+script = ExtResource("2_r07t5")

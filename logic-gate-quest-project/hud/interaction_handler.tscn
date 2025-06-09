@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://bm0pvv6lb66td"]
+
+[ext_resource type="Script" path="res://hud/interaction_handler.gd" id="1_6ipnj"]
+[ext_resource type="FontFile" uid="uid://bhwhajtswh3f" path="res://art/fonts/Augusta.ttf" id="2_5no6e"]
+[ext_resource type="Texture2D" uid="uid://bglsl0eho5kkc" path="res://art/truth tables/and TT.png" id="3_lvd3j"]
+[ext_resource type="Texture2D" uid="uid://bsjl6rrxqwjxn" path="res://art/truth tables/or TT.png" id="4_do3fi"]
+[ext_resource type="Texture2D" uid="uid://cf5rmvqn5rwx" path="res://art/truth tables/not TT.png" id="5_fyhmo"]
+[ext_resource type="Texture2D" uid="uid://c1dmkfve2mwpr" path="res://art/truth tables/xor TT.png" id="6_jfjbq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r1qdk"]
+radius = 4.33333
+
+[sub_resource type="LabelSettings" id="LabelSettings_ock3h"]
+line_spacing = 5.0
+font = ExtResource("2_5no6e")
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[node name="InteractingComponent" type="Node2D"]
+script = ExtResource("1_6ipnj")
+
+[node name="Range" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_r1qdk")
+
+[node name="label" type="Label" parent="."]
+offset_left = -74.0
+offset_top = -93.0
+offset_right = 74.0
+offset_bottom = -49.0
+text = "E to interact
+"
+label_settings = SubResource("LabelSettings_ock3h")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="truth table" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="AndTt" type="Sprite2D" parent="truth table"]
+process_priority = 10
+position = Vector2(80, 375)
+texture = ExtResource("3_lvd3j")
+
+[node name="OrTt" type="Sprite2D" parent="truth table"]
+position = Vector2(80, 375)
+texture = ExtResource("4_do3fi")
+
+[node name="NotTt" type="Sprite2D" parent="truth table"]
+position = Vector2(65, 389)
+texture = ExtResource("5_fyhmo")
+
+[node name="XorTt" type="Sprite2D" parent="truth table"]
+position = Vector2(80, 375)
+texture = ExtResource("6_jfjbq")
+
+[connection signal="area_entered" from="Range" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="Range" to="." method="_on_interact_range_area_exited"]

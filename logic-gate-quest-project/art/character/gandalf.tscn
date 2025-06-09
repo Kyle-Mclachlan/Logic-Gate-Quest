@@ -1,0 +1,151 @@
+[gd_scene load_steps=19 format=3 uid="uid://b1p7enjdkbjix"]
+
+[ext_resource type="Script" path="res://scripts/gandalf.gd" id="1_mdj24"]
+[ext_resource type="Texture2D" uid="uid://cuamu0kqmmio2" path="res://art/character/gandalf sprite set.png" id="2_ieqij"]
+[ext_resource type="AudioStream" uid="uid://ce4nesnxecl8j" path="res://sound effects/gandalf walk.mp3" id="3_vy1sb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olion"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(136, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goqps"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(136, 68, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlmdl"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(408, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mngxp"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(408, 68, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihmpk"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(340, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qck36"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(340, 68, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3nxv"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(272, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeefn"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(272, 68, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l05qo"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(68, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx32p"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(204, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c10p5"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(68, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kodn"]
+atlas = ExtResource("2_ieqij")
+region = Rect2(204, 68, 68, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k33ss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olion")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goqps")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlmdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mngxp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihmpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qck36")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3nxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeefn")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l05qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx32p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c10p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kodn")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbemp"]
+size = Vector2(30, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qsbph"]
+radius = 54.0
+
+[node name="gandalf" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_mdj24")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k33ss")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 19)
+shape = SubResource("RectangleShape2D_cbemp")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 21)
+shape = SubResource("CircleShape2D_qsbph")
+
+[node name="gandalf walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vy1sb")
+bus = &"sfx"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

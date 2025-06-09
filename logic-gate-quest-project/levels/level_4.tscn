@@ -1,0 +1,164 @@
+[gd_scene load_steps=16 format=3 uid="uid://bg3evlvjaxsoa"]
+
+[ext_resource type="Texture2D" uid="uid://cswjhivdhxdr0" path="res://art/backgrounds/background.png" id="1_bllbc"]
+[ext_resource type="Script" path="res://scripts/level_getter.gd" id="1_ffqjj"]
+[ext_resource type="Texture2D" uid="uid://da50fbbwrt10s" path="res://art/tileset/gold tileset.png" id="2_67575"]
+[ext_resource type="PackedScene" uid="uid://cqjq8lc7saepo" path="res://circuit/lever.tscn" id="3_01jbr"]
+[ext_resource type="PackedScene" uid="uid://drs0id18vcdce" path="res://circuit/right bend.tscn" id="4_73s4i"]
+[ext_resource type="PackedScene" uid="uid://oyoyrc388a7g" path="res://circuit/monolith and.tscn" id="5_g147w"]
+[ext_resource type="PackedScene" uid="uid://bog1kbq7r5agl" path="res://circuit/left bend.tscn" id="6_qqjep"]
+[ext_resource type="PackedScene" uid="uid://c1xennrbxtgfw" path="res://circuit/horizontal.tscn" id="7_nqxm8"]
+[ext_resource type="PackedScene" uid="uid://jrf62ji20o7o" path="res://circuit/outlet.tscn" id="8_8jii2"]
+[ext_resource type="PackedScene" uid="uid://huxko32efm1x" path="res://circuit/gate.tscn" id="9_r1fft"]
+[ext_resource type="PackedScene" uid="uid://bw2c421aeq6a7" path="res://art/character/player.tscn" id="10_la7p1"]
+[ext_resource type="PackedScene" uid="uid://b1p7enjdkbjix" path="res://art/character/gandalf.tscn" id="10_wqonq"]
+[ext_resource type="PackedScene" uid="uid://dnb8jofsuamjs" path="res://hud/dialog_prompt.tscn" id="11_mlga1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bn7dt"]
+texture = ExtResource("2_67575")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 16.5, -34, 34, 34, 34, 34, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 34, -34, 34.5, 34, 16, 33.5)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16, -34, -16, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, 34, 1, 34, -10.5, -34, -10.5)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16, 34, -15.5, 34, -34)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -13.5, 5, 14, 5, 14, 1, 34, 1, 34, -11, -34, -10.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y02vx"]
+tile_size = Vector2i(68, 68)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_bn7dt")
+
+[node name="Level4" type="Node2D"]
+script = ExtResource("1_ffqjj")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(188.5, 229.5)
+scale = Vector2(3.87402, 5.91992)
+texture = ExtResource("1_bllbc")
+
+[node name="TileMap" type="TileMap" parent="TileMapLayer"]
+tile_set = SubResource("TileSet_y02vx")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 65537, 0, 1, 65537, 0, 2, 65537, 0, 3, 65537, 0, 4, 65537, 0, 5, 65537, 0, 6, 65537, 0, 7, 65537, 0, 8, 65537, 0, 65544, 196609, 0, 131080, 196609, 1, 196616, 196609, 2, 262152, 196609, 2, 327688, 196609, 2, 65536, 65537, 1, 131072, 65537, 3, 196608, 196609, 2, 262144, 196609, 2, 327680, 196609, 2, 393217, 196609, 2, 393218, 196609, 2, 393219, 196609, 2, 393220, 196609, 2, 393221, 196609, 2, 393222, 196609, 2, 393223, 196609, 2, 393224, 196609, 3, 393216, 196609, 2, 65537, 131073, 3, 65538, 65537, 1, 65539, 131073, 3, 65540, 65537, 1, 65541, 131073, 3, 65542, 65537, 1, 65543, 196609, 0, 131079, 196609, 1, 131078, 65537, 3, 131077, 196609, 1, 131076, 65537, 3, 131075, 196609, 1, 131074, 65537, 3, 131073, 196609, 1, 327686, 196609, 2, 327687, 196609, 2, 262151, 196609, 2, 196615, 196609, 2, 196614, 196609, 2, 196613, 196609, 2, 196612, 196609, 2, 196611, 196609, 2, 196610, 196609, 2, 196609, 196609, 2, 262145, 196609, 2, 327681, 196609, 2, 327682, 196609, 2, 327683, 196609, 2, 327684, 196609, 2, 327685, 196609, 2, 262146, 196609, 2, 262147, 196609, 2, 262148, 196609, 2, 262149, 196609, 2, 262150, 196609, 2, 65535, 65537, 0, 262143, 196609, 2, 327679, 196609, 2, 393215, 196609, 2, 458751, 196609, 2, 393225, 196609, 2, 327689, 196609, 2, 262153, 196609, 2, 196617, 196609, 2, 131081, 196609, 1, 65545, 196609, 0, 9, 65537, 0, 10, 131073, 0, 65534, 1, 0, 524287, 65537, 2, 458752, 65537, 2, 458753, 65537, 2, 458754, 65537, 2, 458755, 65537, 2, 458756, 65537, 2, 458757, 65537, 2, 458758, 65537, 2, 458759, 65537, 2, 458760, 65537, 2, 458761, 65537, 2, 458762, 131073, 2, 524286, 1, 2, 458750, 1, 1, 393214, 1, 1, 327678, 1, 1, 262142, 1, 1, 196606, 1, 1, 131070, 1, 1, 65546, 131073, 1, 131082, 131073, 1, 196618, 131073, 1, 262154, 131073, 1, 327690, 131073, 1, 393226, 131073, 1, 131071, 196609, 0, 196607, 196609, 1)
+
+[node name="entities" type="Node" parent="."]
+
+[node name="lv4 left lever" parent="entities" instance=ExtResource("3_01jbr")]
+position = Vector2(34, 374)
+
+[node name="lv4 right lever" parent="entities" instance=ExtResource("3_01jbr")]
+position = Vector2(170, 374)
+
+[node name="lv4 right bend 1" parent="entities" instance=ExtResource("4_73s4i")]
+position = Vector2(34, 306)
+
+[node name="lv4 left bend 1" parent="entities" instance=ExtResource("6_qqjep")]
+position = Vector2(170, 306)
+
+[node name="lv4 monolith 1" parent="entities" instance=ExtResource("5_g147w")]
+position = Vector2(102, 306)
+
+[node name="lv4 right bend 2" parent="entities" instance=ExtResource("4_73s4i")]
+position = Vector2(238, 170)
+
+[node name="lv4 right bend 5" parent="entities" instance=ExtResource("4_73s4i")]
+position = Vector2(102, 238)
+
+[node name="lv4 horizontal 1" parent="entities" instance=ExtResource("7_nqxm8")]
+position = Vector2(306, 170)
+
+[node name="lv4 left lever2" parent="entities" instance=ExtResource("3_01jbr")]
+position = Vector2(306, 374)
+
+[node name="lv4 right lever2" parent="entities" instance=ExtResource("3_01jbr")]
+position = Vector2(442, 374)
+
+[node name="lv4 right bend 3" parent="entities" instance=ExtResource("4_73s4i")]
+position = Vector2(306, 306)
+
+[node name="lv4 left bend 3" parent="entities" instance=ExtResource("6_qqjep")]
+position = Vector2(442, 306)
+
+[node name="lv4 monolith 2" parent="entities" instance=ExtResource("5_g147w")]
+position = Vector2(374, 306)
+
+[node name="lv4 left bend 2" parent="entities" instance=ExtResource("6_qqjep")]
+position = Vector2(374, 238)
+
+[node name="lv4 horizontal 2" parent="entities" instance=ExtResource("7_nqxm8")]
+position = Vector2(306, 238)
+
+[node name="lvl 4 monolith 3" parent="entities" instance=ExtResource("5_g147w")]
+position = Vector2(238, 238)
+
+[node name="lv4 horizontal 3" parent="entities" instance=ExtResource("7_nqxm8")]
+position = Vector2(170, 238)
+
+[node name="lv4 horizontal 4" parent="entities" instance=ExtResource("7_nqxm8")]
+position = Vector2(374, 170)
+
+[node name="lv4 outlet" parent="entities" instance=ExtResource("8_8jii2")]
+position = Vector2(442, 170)
+
+[node name="lv4 gate" parent="entities" instance=ExtResource("9_r1fft")]
+position = Vector2(578, 136)
+
+[node name="lv4 dialog" parent="entities" instance=ExtResource("11_mlga1")]
+position = Vector2(577, 444)
+
+[node name="gandalf" parent="entities" instance=ExtResource("10_wqonq")]
+position = Vector2(524, 417)
+
+[node name="player" parent="entities" instance=ExtResource("10_la7p1")]
+position = Vector2(579, 412)
+
+[node name="Camera2D" type="Camera2D" parent="entities/player"]
+limit_left = -150
+limit_top = 0
+limit_right = 800
+limit_bottom = 550
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.2
+drag_vertical_offset = 0.2
+
+[connection signal="state_changed" from="entities/lv4 left lever" to="entities/lv4 right bend 1" method="_change_state"]
+[connection signal="state_changed" from="entities/lv4 left lever" to="entities/lv4 monolith 1" method="_change_left_state"]
+[connection signal="state_changed" from="entities/lv4 right lever" to="entities/lv4 left bend 1" method="_change_state"]
+[connection signal="state_changed" from="entities/lv4 right lever" to="entities/lv4 monolith 1" method="_change_right_state"]
+[connection signal="monolith_changed" from="entities/lv4 monolith 1" to="entities/lv4 right bend 5" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv4 monolith 1" to="entities/lvl 4 monolith 3" method="_change_left_state"]
+[connection signal="monolith_changed" from="entities/lv4 monolith 1" to="entities/lv4 horizontal 3" method="_change_state"]
+[connection signal="state_changed" from="entities/lv4 left lever2" to="entities/lv4 right bend 3" method="_change_state"]
+[connection signal="state_changed" from="entities/lv4 left lever2" to="entities/lv4 monolith 2" method="_change_left_state"]
+[connection signal="state_changed" from="entities/lv4 right lever2" to="entities/lv4 left bend 3" method="_change_state"]
+[connection signal="state_changed" from="entities/lv4 right lever2" to="entities/lv4 monolith 2" method="_change_right_state"]
+[connection signal="monolith_changed" from="entities/lv4 monolith 2" to="entities/lv4 left bend 2" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv4 monolith 2" to="entities/lv4 horizontal 2" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv4 monolith 2" to="entities/lvl 4 monolith 3" method="_change_right_state"]
+[connection signal="monolith_changed" from="entities/lvl 4 monolith 3" to="entities/lv4 right bend 2" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lvl 4 monolith 3" to="entities/lv4 horizontal 1" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lvl 4 monolith 3" to="entities/lv4 horizontal 4" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lvl 4 monolith 3" to="entities/lv4 outlet" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lvl 4 monolith 3" to="entities/lv4 gate" method="_change_gate_state"]
+[connection signal="dialog_message" from="entities/lv4 dialog" to="entities/player" method="_show_dialog"]

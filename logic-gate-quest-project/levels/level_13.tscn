@@ -1,0 +1,198 @@
+[gd_scene load_steps=23 format=3 uid="uid://esh0dakdire3"]
+
+[ext_resource type="Script" path="res://scripts/level_getter.gd" id="1_aplie"]
+[ext_resource type="Texture2D" uid="uid://cswjhivdhxdr0" path="res://art/backgrounds/background.png" id="1_o24hq"]
+[ext_resource type="Texture2D" uid="uid://da50fbbwrt10s" path="res://art/tileset/gold tileset.png" id="2_kemn3"]
+[ext_resource type="Texture2D" uid="uid://dorrei4qkcue" path="res://art/tileset/copper tileset.png" id="2_mpftf"]
+[ext_resource type="PackedScene" uid="uid://cqjq8lc7saepo" path="res://circuit/lever.tscn" id="3_74cjm"]
+[ext_resource type="PackedScene" uid="uid://drs0id18vcdce" path="res://circuit/right bend.tscn" id="4_gjbin"]
+[ext_resource type="Texture2D" uid="uid://pwkikvwbjydt" path="res://art/tileset/silver tileset.png" id="4_qnyvp"]
+[ext_resource type="Texture2D" uid="uid://bxyo0y0q2pgrv" path="res://art/tileset/platinum tileset.png" id="5_gkpym"]
+[ext_resource type="PackedScene" uid="uid://dw6jyxmoye1vt" path="res://circuit/pylon off.tscn" id="6_jaftb"]
+[ext_resource type="PackedScene" uid="uid://bog1kbq7r5agl" path="res://circuit/left bend.tscn" id="6_objbl"]
+[ext_resource type="PackedScene" uid="uid://c1xennrbxtgfw" path="res://circuit/horizontal.tscn" id="7_c54av"]
+[ext_resource type="PackedScene" uid="uid://jrf62ji20o7o" path="res://circuit/outlet.tscn" id="8_sjfr6"]
+[ext_resource type="PackedScene" uid="uid://ccox8pggcw4av" path="res://circuit/monolith xor.tscn" id="9_lruwc"]
+[ext_resource type="PackedScene" uid="uid://huxko32efm1x" path="res://circuit/gate.tscn" id="9_mhbeq"]
+[ext_resource type="PackedScene" uid="uid://b1p7enjdkbjix" path="res://art/character/gandalf.tscn" id="10_ku3qm"]
+[ext_resource type="PackedScene" uid="uid://bw2c421aeq6a7" path="res://art/character/player.tscn" id="11_nbor2"]
+[ext_resource type="PackedScene" uid="uid://dnb8jofsuamjs" path="res://hud/dialog_prompt.tscn" id="15_nsrss"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7rfc"]
+texture = ExtResource("2_mpftf")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 34, -34, 34, 34, 16, 34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16, -34, -16, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1.5, 34, 1, 34, -11, -34, -11)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, 33.5, -34, 34, -15.5, -34, -16.5)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -14, 6, 14, 5.5, 14, 1, 34, 1, 34, -10.5, -34, -10.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8agga"]
+texture = ExtResource("2_kemn3")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 16.5, -34, 34, 34, 34, 34, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 34, -34, 34, 34, 16, 33.5)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16, -34, -16, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, 34, 1, 34, -10.5, -34, -10.5)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16, 34, -15.5, 34, -34)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -13.5, 5, 14, 5, 14, 1, 34, 1, 34, -11, -34, -10.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7kiu"]
+texture = ExtResource("4_qnyvp")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 16.5, 34, 34, 34, 34, -34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, 34, -16, 34, -16, -34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, 34, 1, 34.5, -9.5, -34, -10)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, 34, -34, 34, -16, -34, -16)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -14, 6, 14, 6, 14, 1, 34, 1, 34, -10, -34, -10)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7qul"]
+texture = ExtResource("5_gkpym")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 16, -34, 34, 34, 34, 34, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(34, -34, 16, -34, 16, 34, 34, 34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -15.5, -34, -15.5, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 0.5, 34, 1, 34, -10.5, -34, -11)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16, 34, -16, 34, -34)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1.5, -14, 6, 14, 6, 14.5, 1, 34, 1.5, 34, -11.5, -34, -12.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y02vx"]
+tile_size = Vector2i(68, 68)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_8agga")
+sources/2 = SubResource("TileSetAtlasSource_p7kiu")
+sources/0 = SubResource("TileSetAtlasSource_y7rfc")
+sources/3 = SubResource("TileSetAtlasSource_r7qul")
+
+[node name="Level13" type="Node2D"]
+script = ExtResource("1_aplie")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(307, 272)
+scale = Vector2(2.42578, 3.62891)
+texture = ExtResource("1_o24hq")
+
+[node name="TileMap" type="TileMap" parent="TileMapLayer"]
+tile_set = SubResource("TileSet_y02vx")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 3, 0, 2, 65539, 0, 3, 65539, 0, 4, 65539, 0, 5, 65539, 0, 6, 65539, 0, 7, 65539, 0, 8, 131075, 0, 65544, 131075, 1, 131080, 131075, 1, 196616, 131075, 1, 262152, 131075, 1, 327688, 131075, 1, 65536, 3, 1, 131072, 3, 1, 196608, 3, 1, 262144, 3, 1, 327680, 3, 1, 393217, 65539, 2, 393218, 65539, 2, 393219, 65539, 2, 393220, 65539, 2, 393221, 65539, 2, 393222, 65539, 2, 393223, 65539, 2, 393224, 131075, 2, 393216, 3, 2, 65537, 196611, 0, 65538, 65539, 1, 65539, 131075, 3, 65540, 131075, 3, 65541, 65539, 1, 65542, 196611, 0, 65543, 196611, 0, 131079, 196611, 1, 131078, 196611, 1, 131077, 65539, 3, 131076, 196611, 1, 131075, 196611, 1, 131074, 65539, 3, 131073, 196611, 1, 327686, 196611, 3, 327687, 196611, 2, 262151, 196611, 2, 196615, 196611, 2, 196614, 196611, 2, 196613, 196611, 2, 196612, 196611, 2, 196611, 196611, 2, 196610, 196611, 2, 196609, 196611, 2, 262145, 196611, 2, 327681, 196611, 2, 327682, 196611, 2, 327683, 196611, 2, 327684, 196611, 2, 327685, 196611, 2, 262146, 196611, 2, 262147, 196611, 2, 262149, 196611, 2, 262150, 196611, 2, 1, 65539, 0, 262148, 196611, 2)
+
+[node name="entities" type="Node" parent="."]
+
+[node name="lv13 pylon" parent="entities" instance=ExtResource("6_jaftb")]
+position = Vector2(170, 306)
+
+[node name="lv13 lever 2" parent="entities" instance=ExtResource("3_74cjm")]
+position = Vector2(306, 306)
+
+[node name="lv13 right bend" parent="entities" instance=ExtResource("4_gjbin")]
+position = Vector2(170, 238)
+
+[node name="lv13 monolith" parent="entities" instance=ExtResource("9_lruwc")]
+position = Vector2(238, 238)
+
+[node name="lv13 left bend" parent="entities" instance=ExtResource("6_objbl")]
+position = Vector2(306, 238)
+
+[node name="lv13 right bend 2" parent="entities" instance=ExtResource("4_gjbin")]
+position = Vector2(238, 170)
+
+[node name="lv13 horizontal" parent="entities" instance=ExtResource("7_c54av")]
+position = Vector2(306, 170)
+
+[node name="lv13 outlet" parent="entities" instance=ExtResource("8_sjfr6")]
+position = Vector2(374, 170)
+
+[node name="lv13 gate" parent="entities" instance=ExtResource("9_mhbeq")]
+position = Vector2(442, 136)
+
+[node name="lv13 dialog" parent="entities" instance=ExtResource("15_nsrss")]
+position = Vector2(440, 370)
+
+[node name="gandalf" parent="entities" instance=ExtResource("10_ku3qm")]
+position = Vector2(386, 349)
+
+[node name="player" parent="entities" instance=ExtResource("11_nbor2")]
+position = Vector2(443, 343)
+
+[node name="Camera2D" type="Camera2D" parent="entities/player"]
+limit_left = 0
+limit_top = 0
+limit_right = 700
+limit_bottom = 500
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.2
+drag_vertical_offset = 0.2
+
+[connection signal="state_changed" from="entities/lv13 lever 2" to="entities/lv13 monolith" method="_change_right_state"]
+[connection signal="state_changed" from="entities/lv13 lever 2" to="entities/lv13 left bend" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv13 monolith" to="entities/lv13 right bend 2" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv13 monolith" to="entities/lv13 horizontal" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv13 monolith" to="entities/lv13 outlet" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv13 monolith" to="entities/lv13 gate" method="_change_gate_state"]
+[connection signal="dialog_message" from="entities/lv13 dialog" to="entities/player" method="_show_dialog"]

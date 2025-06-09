@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cd411hda66fwe"
+path="res://.godot/imported/catapult.mp3-c9200ee40469f84efa54ff951a7cd96a.mp3str"
+
+[deps]
+
+source_file="res://sound effects/catapult.mp3"
+dest_files=["res://.godot/imported/catapult.mp3-c9200ee40469f84efa54ff951a7cd96a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

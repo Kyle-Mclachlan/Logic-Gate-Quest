@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://cywqaoqhprcyu"]
+
+[ext_resource type="Script" path="res://scripts/dragon.gd" id="1_0n1h1"]
+[ext_resource type="PackedScene" uid="uid://ch1d3g470dfqe" path="res://hud/interactable.tscn" id="1_ll8sy"]
+[ext_resource type="Texture2D" uid="uid://c7vsfbrb26ir3" path="res://art/objects/dragon/dragon rest.png" id="1_t7u6y"]
+[ext_resource type="Texture2D" uid="uid://b3mt8x257rjoa" path="res://art/objects/dragon/dragon powered.png" id="2_twm4h"]
+[ext_resource type="Texture2D" uid="uid://cf0bmq3npa648" path="res://art/backgrounds/dialog back.png" id="5_kmorn"]
+[ext_resource type="FontFile" uid="uid://b4tuvvqas2iw8" path="res://art/fonts/alagard.ttf" id="6_8ntlh"]
+[ext_resource type="PackedScene" uid="uid://huxko32efm1x" path="res://circuit/gate.tscn" id="7_afxoy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0vr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_twm4h")
+}],
+"loop": false,
+"name": &"dragon fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_twm4h")
+}],
+"loop": false,
+"name": &"dragon powered",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t7u6y")
+}],
+"loop": false,
+"name": &"dragon rest",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s034d"]
+radius = 32.0156
+
+[node name="dragon" type="StaticBody2D" groups=["dragon"]]
+script = ExtResource("1_0n1h1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u0vr3")
+animation = &"dragon rest"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-136, 164, -125, 171, -118, 171, -114, 169, -86, 170, -61, 170, -55, 169, -52, 162, -30, 162, -27, 163, -19, 163, -16, 162, 24, 162, 27, 165, 41, 165, 44, 162, 53, 162, 58, 168, 62, 170, 77, 170, 93, 169, 111, 170, 130, 170, 136, 165, 136, 135, -136, 134)
+
+[node name="interactable" parent="." groups=["dragon"] instance=ExtResource("1_ll8sy")]
+position = Vector2(-23, 157)
+
+[node name="range" type="CollisionShape2D" parent="interactable"]
+shape = SubResource("CircleShape2D_s034d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="dialog" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogBack" type="Sprite2D" parent="CanvasLayer/dialog"]
+position = Vector2(384, 332)
+texture = ExtResource("5_kmorn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/dialog"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 252.0
+offset_right = 706.0
+offset_bottom = 410.0
+theme_override_colors/default_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/normal_font = ExtResource("6_8ntlh")
+text = "Congratulations! 
+You have bested the dragon using your knowledge of logic gates, the castle is now yours.
+
+I hope you enjoyed this journey."
+
+[node name="label exit" type="RichTextLabel" parent="CanvasLayer/dialog"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 412.0
+offset_right = 718.0
+offset_bottom = 429.0
+theme_override_colors/default_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/normal_font = ExtResource("6_8ntlh")
+text = "Press T or SpaceBar to close"
+
+[node name="gate" parent="." instance=ExtResource("7_afxoy")]
+position = Vector2(-980, -481)

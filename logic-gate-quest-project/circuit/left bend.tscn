@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bog1kbq7r5agl"]
+
+[ext_resource type="Texture2D" uid="uid://bne78yxvt0j8x" path="res://art/objects/wire/left bend off.png" id="1_twtf3"]
+[ext_resource type="Script" path="res://scripts/left_bend.gd" id="2_3l2ae"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_twtf3")
+script = ExtResource("2_3l2ae")

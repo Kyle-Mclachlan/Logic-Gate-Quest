@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbtpekxdxkv1a"]
+
+[ext_resource type="Script" path="res://scripts/monolith_or.gd" id="1_cjloi"]
+[ext_resource type="Texture2D" uid="uid://bwe11lxdw8oky" path="res://art/objects/monolith/or off.png" id="2_wixjr"]
+[ext_resource type="FontFile" uid="uid://b4tuvvqas2iw8" path="res://art/fonts/alagard.ttf" id="4_02gjs"]
+[ext_resource type="PackedScene" uid="uid://ch1d3g470dfqe" path="res://hud/interactable.tscn" id="4_ixx0t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbu8y"]
+radius = 32.0156
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["monolith", "or TT"]]
+script = ExtResource("1_cjloi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wixjr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-15, 18, 15, 18, 15, -2, 12, -2, 12, -34, 10, -34, -12, -34, -12, -2, -15, -2)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -90.0
+offset_top = 20.0
+offset_right = 90.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("4_02gjs")
+text = "Or Gate"
+horizontal_alignment = 1
+
+[node name="interactable" parent="." groups=["monolith", "or TT"] instance=ExtResource("4_ixx0t")]
+position = Vector2(0, 11)
+
+[node name="range" type="CollisionShape2D" parent="interactable"]
+position = Vector2(-1, -16)
+shape = SubResource("CircleShape2D_jbu8y")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqjq8lc7saepo"]
+
+[ext_resource type="Script" path="res://scripts/lever.gd" id="1_d4w22"]
+[ext_resource type="Texture2D" uid="uid://dpr6uuf62jkju" path="res://art/objects/power/lever off.png" id="2_47upx"]
+[ext_resource type="FontFile" uid="uid://b4tuvvqas2iw8" path="res://art/fonts/alagard.ttf" id="4_w6xi1"]
+[ext_resource type="AudioStream" uid="uid://b80lge0nnrisp" path="res://sound effects/switch.mp3" id="5_g0m04"]
+[ext_resource type="PackedScene" uid="uid://ch1d3g470dfqe" path="res://hud/interactable.tscn" id="5_n1gpy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1jcq"]
+radius = 32.0156
+
+[node name="lever" type="StaticBody2D" groups=["lever"]]
+script = ExtResource("1_d4w22")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_47upx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-15, -10, -19, -10, -22, -7, -22, -3, -17, 15, -17, 18, 17, 18, 17, 15, 10, 8, 4, 5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = 20.0
+offset_right = 21.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("4_w6xi1")
+text = "Lever"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="switch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_g0m04")
+bus = &"sfx"
+
+[node name="interactable" parent="." groups=["lever"] instance=ExtResource("5_n1gpy")]
+position = Vector2(0, 11)
+
+[node name="range" type="CollisionShape2D" parent="interactable"]
+shape = SubResource("CircleShape2D_p1jcq")

@@ -1,0 +1,142 @@
+[gd_scene load_steps=19 format=3 uid="uid://cywqaoqhprcyu"]
+
+[ext_resource type="Script" path="res://scripts/dragon.gd" id="1_0n1h1"]
+[ext_resource type="PackedScene" uid="uid://ch1d3g470dfqe" path="res://hud/interactable.tscn" id="1_ll8sy"]
+[ext_resource type="Texture2D" uid="uid://c7vsfbrb26ir3" path="res://art/objects/dragon/dragon rest.png" id="1_t7u6y"]
+[ext_resource type="Texture2D" uid="uid://cdre05is3pj8m" path="res://art/objects/dragon/dragon fire 1.png" id="2_lme7u"]
+[ext_resource type="Texture2D" uid="uid://b3mt8x257rjoa" path="res://art/objects/dragon/dragon powered.png" id="2_twm4h"]
+[ext_resource type="Texture2D" uid="uid://bl7ln34nf4cqm" path="res://art/objects/dragon/dragon fire 2.png" id="3_72jt3"]
+[ext_resource type="Texture2D" uid="uid://dkgldclc3ifnm" path="res://art/objects/dragon/dragon fire 3.png" id="4_bnkk3"]
+[ext_resource type="Texture2D" uid="uid://cf0bmq3npa648" path="res://art/backgrounds/dialog back.png" id="5_kmorn"]
+[ext_resource type="Texture2D" uid="uid://b03c8dpj2lqdq" path="res://art/objects/dragon/dragon fire 4.png" id="5_m0kwk"]
+[ext_resource type="Texture2D" uid="uid://d74tc1g01tk6" path="res://art/objects/dragon/dragon fire 5.png" id="6_05pec"]
+[ext_resource type="FontFile" uid="uid://b4tuvvqas2iw8" path="res://art/fonts/alagard.ttf" id="6_8ntlh"]
+[ext_resource type="Texture2D" uid="uid://dxn0rm2sflpqf" path="res://art/objects/dragon/dragon fire 6.png" id="7_eu42h"]
+[ext_resource type="Texture2D" uid="uid://hkq0nsmgeaw0" path="res://art/objects/dragon/dragon fire 7.png" id="8_1bavi"]
+[ext_resource type="AudioStream" uid="uid://cd411hda66fwe" path="res://sound effects/catapult.mp3" id="11_mcaw0"]
+[ext_resource type="Texture2D" uid="uid://dotdsw0h3qy36" path="res://art/character/gandalf profile.png" id="14_auu8j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0vr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lme7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_72jt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bnkk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m0kwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_05pec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eu42h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1bavi")
+}],
+"loop": false,
+"name": &"dragon fire",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_twm4h")
+}],
+"loop": false,
+"name": &"dragon powered",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t7u6y")
+}],
+"loop": false,
+"name": &"dragon rest",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tpkta"]
+radius = 5.0
+height = 52.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s034d"]
+radius = 32.0156
+
+[node name="dragon" type="StaticBody2D" groups=["dragon"]]
+script = ExtResource("1_0n1h1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u0vr3")
+animation = &"dragon fire"
+frame = 6
+frame_progress = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-136, 164, -125, 171, -118, 171, -114, 169, -86, 170, -61, 170, -55, 169, -52, 162, -30, 162, -27, 163, -19, 163, -16, 162, 24, 162, 27, 165, 41, 165, 44, 162, 53, 162, 58, 168, 62, 170, 77, 170, 93, 169, 111, 170, 130, 170, 136, 165, 136, 135, -136, 134)
+
+[node name="catapult" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_mcaw0")
+bus = &"sfx"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-22, 134)
+rotation = 1.5708
+scale = Vector2(-17.7825, 4.31285)
+shape = SubResource("CapsuleShape2D_tpkta")
+
+[node name="interactable" parent="." groups=["dragon"] instance=ExtResource("1_ll8sy")]
+position = Vector2(-23, 157)
+
+[node name="range" type="CollisionShape2D" parent="interactable"]
+shape = SubResource("CircleShape2D_s034d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="dialog" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogBack" type="Sprite2D" parent="CanvasLayer/dialog"]
+position = Vector2(384, 332)
+texture = ExtResource("5_kmorn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/dialog"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 252.0
+offset_right = 706.0
+offset_bottom = 410.0
+theme_override_colors/default_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/normal_font = ExtResource("6_8ntlh")
+text = "Congratulations! 
+You have bested the dragon using your knowledge of logic gates, the castle is now yours.
+
+I hope you enjoyed this journey."
+
+[node name="label exit" type="RichTextLabel" parent="CanvasLayer/dialog"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 412.0
+offset_right = 718.0
+offset_bottom = 429.0
+theme_override_colors/default_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/normal_font = ExtResource("6_8ntlh")
+text = "Press t or SpaceBar to close"
+
+[node name="GandalfProfile" type="Sprite2D" parent="CanvasLayer/dialog"]
+position = Vector2(146, 330)
+scale = Vector2(9, 9)
+texture = ExtResource("14_auu8j")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

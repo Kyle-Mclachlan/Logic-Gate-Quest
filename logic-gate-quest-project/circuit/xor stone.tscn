@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwi7s0cua5vt0"]
+
+[ext_resource type="Script" path="res://scripts/xor_stone.gd" id="1_h2g57"]
+[ext_resource type="Texture2D" uid="uid://disvohn87cwlh" path="res://art/objects/moveableMonoliths/i xor.png" id="2_xwh7s"]
+[ext_resource type="PackedScene" uid="uid://ch1d3g470dfqe" path="res://hud/interactable.tscn" id="3_ij7eo"]
+[ext_resource type="FontFile" uid="uid://b4tuvvqas2iw8" path="res://art/fonts/alagard.ttf" id="4_0233g"]
+[ext_resource type="AudioStream" uid="uid://bkhjjhhlrp1ec" path="res://sound effects/whistle up.mp3" id="5_mnh44"]
+[ext_resource type="AudioStream" uid="uid://cewfln8lm6x" path="res://sound effects/whistle down.mp3" id="6_hr5eq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_owo7v"]
+radius = 40.0
+
+[node name="xor stone" type="StaticBody2D" groups=["stone", "xor TT"]]
+script = ExtResource("1_h2g57")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xwh7s")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -31, -12, -24, -12, 15, 12, 15, 12, -24, 4, -31)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -85.0
+offset_top = 17.0
+offset_right = 85.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("4_0233g")
+theme_override_font_sizes/font_size = 16
+text = "Xor Stone"
+horizontal_alignment = 1
+
+[node name="up" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_mnh44")
+bus = &"sfx"
+
+[node name="down" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hr5eq")
+bus = &"sfx"
+
+[node name="interactable" parent="." groups=["stone", "xor TT"] instance=ExtResource("3_ij7eo")]
+position = Vector2(0, 11)
+
+[node name="range" type="CollisionShape2D" parent="interactable"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_owo7v")

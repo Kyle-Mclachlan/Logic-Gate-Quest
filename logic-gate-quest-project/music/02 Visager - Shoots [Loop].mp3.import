@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bv2nwjadrum80"
+path="res://.godot/imported/02 Visager - Shoots [Loop].mp3-7e2b31a8f4ba98e81d285cc58432d06a.mp3str"
+
+[deps]
+
+source_file="res://music/02 Visager - Shoots [Loop].mp3"
+dest_files=["res://.godot/imported/02 Visager - Shoots [Loop].mp3-7e2b31a8f4ba98e81d285cc58432d06a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

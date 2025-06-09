@@ -1,0 +1,438 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxqsnqjpv2o2r"]
+
+[ext_resource type="Script" path="res://menus/level_select.gd" id="1_2fu7e"]
+[ext_resource type="Texture2D" uid="uid://c2oxnolbuol84" path="res://art/miscellaneos/level select back.png" id="1_aq1it"]
+[ext_resource type="FontFile" uid="uid://buyb1f51jx7j6" path="res://art/miscellaneos/MedievalSharp-Bold.ttf" id="2_dand7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2fu7e")
+
+[node name="LevelSelectBack" type="Sprite2D" parent="."]
+position = Vector2(384, 216)
+texture = ExtResource("1_aq1it")
+
+[node name="throne room" type="Button" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 24.0
+offset_right = 497.0
+offset_bottom = 57.0
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Return To Throne Room
+"
+flat = true
+alignment = 0
+
+[node name="title screen" type="Button" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 376.0
+offset_right = 506.0
+offset_bottom = 409.0
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Return To Title Screen
+"
+flat = true
+alignment = 0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 68.0
+offset_right = 686.0
+offset_bottom = 212.0
+columns = 6
+
+[node name="tutorial" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Tutorial"
+flat = true
+alignment = 0
+
+[node name="level1" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 1
+"
+flat = true
+alignment = 0
+
+[node name="level2" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 2"
+flat = true
+alignment = 0
+
+[node name="level3" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 3"
+flat = true
+alignment = 0
+
+[node name="level4" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 4"
+flat = true
+alignment = 0
+
+[node name="level5" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 5"
+flat = true
+alignment = 0
+
+[node name="level6" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 6"
+flat = true
+alignment = 0
+
+[node name="level7" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 7"
+flat = true
+alignment = 0
+
+[node name="level8" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 8"
+flat = true
+alignment = 0
+
+[node name="level9" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 9"
+flat = true
+alignment = 0
+
+[node name="level10" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 10"
+flat = true
+alignment = 0
+
+[node name="level11" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 11"
+flat = true
+alignment = 0
+
+[node name="level12" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 12"
+flat = true
+alignment = 0
+
+[node name="level13" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 13"
+flat = true
+alignment = 0
+
+[node name="level14" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 14"
+flat = true
+alignment = 0
+
+[node name="level15" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 15"
+flat = true
+alignment = 0
+
+[node name="level16" type="Button" parent="GridContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 16"
+flat = true
+alignment = 0
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 200.0
+offset_right = 551.0
+offset_bottom = 344.0
+columns = 3
+
+[node name="level17" type="Button" parent="GridContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 17
+"
+flat = true
+alignment = 0
+
+[node name="level18" type="Button" parent="GridContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 18
+"
+flat = true
+alignment = 0
+
+[node name="level19" type="Button" parent="GridContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 19"
+flat = true
+alignment = 0
+
+[node name="level20" type="Button" parent="GridContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 20"
+flat = true
+alignment = 0
+
+[node name="level21" type="Button" parent="GridContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 21"
+flat = true
+alignment = 0
+
+[node name="level22" type="Button" parent="GridContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Level - 22"
+flat = true
+alignment = 0
+
+[node name="drangon lair" type="Button" parent="GridContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("2_dand7")
+theme_override_font_sizes/font_size = 20
+text = "Dragons Lair"
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="throne room" to="." method="_on_throne_room_pressed"]
+[connection signal="pressed" from="title screen" to="." method="_on_title_screen_pressed"]
+[connection signal="pressed" from="GridContainer/tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="GridContainer/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="GridContainer/level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="GridContainer/level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="GridContainer/level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="GridContainer/level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="GridContainer/level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="GridContainer/level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="GridContainer/level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="GridContainer/level9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="GridContainer/level10" to="." method="_on_level_10_pressed"]
+[connection signal="pressed" from="GridContainer/level11" to="." method="_on_level_11_pressed"]
+[connection signal="pressed" from="GridContainer/level12" to="." method="_on_level_12_pressed"]
+[connection signal="pressed" from="GridContainer/level13" to="." method="_on_level_13_pressed"]
+[connection signal="pressed" from="GridContainer/level14" to="." method="_on_level_14_pressed"]
+[connection signal="pressed" from="GridContainer/level15" to="." method="_on_level_15_pressed"]
+[connection signal="pressed" from="GridContainer/level16" to="." method="_on_level_16_pressed"]
+[connection signal="pressed" from="GridContainer2/level17" to="." method="_on_level_17_pressed"]
+[connection signal="pressed" from="GridContainer2/level18" to="." method="_on_level_18_pressed"]
+[connection signal="pressed" from="GridContainer2/level19" to="." method="_on_level_19_pressed"]
+[connection signal="pressed" from="GridContainer2/level20" to="." method="_on_level_20_pressed"]
+[connection signal="pressed" from="GridContainer2/level21" to="." method="_on_level_21_pressed"]
+[connection signal="pressed" from="GridContainer2/level22" to="." method="_on_level_22_pressed"]
+[connection signal="pressed" from="GridContainer2/drangon lair" to="." method="_on_level_6_pressed"]

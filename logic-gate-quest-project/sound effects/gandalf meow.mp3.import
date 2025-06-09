@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ydvpsw1b0mj2"
+path="res://.godot/imported/gandalf meow.mp3-824954bacb0cbd8e256047e6699a2493.mp3str"
+
+[deps]
+
+source_file="res://sound effects/gandalf meow.mp3"
+dest_files=["res://.godot/imported/gandalf meow.mp3-824954bacb0cbd8e256047e6699a2493.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

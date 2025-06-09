@@ -1,0 +1,366 @@
+[gd_scene load_steps=29 format=3 uid="uid://et2nw65oe4ro"]
+
+[ext_resource type="Script" path="res://scripts/level_getter.gd" id="1_kxx6o"]
+[ext_resource type="Texture2D" uid="uid://cswjhivdhxdr0" path="res://art/backgrounds/background.png" id="2_sdbgn"]
+[ext_resource type="Texture2D" uid="uid://brri44j07cnav" path="res://art/tileset/hub tileset.png" id="3_1yrns"]
+[ext_resource type="Texture2D" uid="uid://da50fbbwrt10s" path="res://art/tileset/gold tileset.png" id="4_pqbrj"]
+[ext_resource type="Texture2D" uid="uid://djamk481shu5u" path="res://art/tileset/drangons lair tileset.png" id="5_ws7lc"]
+[ext_resource type="PackedScene" uid="uid://clprendp036mt" path="res://circuit/left up.tscn" id="6_526nd"]
+[ext_resource type="PackedScene" uid="uid://dskvh4k5024i4" path="res://circuit/pylon on.tscn" id="6_c3u2y"]
+[ext_resource type="PackedScene" uid="uid://dadugv747y1lc" path="res://circuit/lever_on.tscn" id="6_t3w01"]
+[ext_resource type="PackedScene" uid="uid://cqjq8lc7saepo" path="res://circuit/lever.tscn" id="6_tq5de"]
+[ext_resource type="PackedScene" uid="uid://drs0id18vcdce" path="res://circuit/right bend.tscn" id="7_iwmo4"]
+[ext_resource type="PackedScene" uid="uid://b1p7enjdkbjix" path="res://art/character/gandalf.tscn" id="7_j2hqf"]
+[ext_resource type="PackedScene" uid="uid://oyoyrc388a7g" path="res://circuit/monolith and.tscn" id="8_d36im"]
+[ext_resource type="PackedScene" uid="uid://c84t74kkjcw1i" path="res://circuit/splitter.tscn" id="8_ty11x"]
+[ext_resource type="PackedScene" uid="uid://bog1kbq7r5agl" path="res://circuit/left bend.tscn" id="9_moust"]
+[ext_resource type="PackedScene" uid="uid://c1xennrbxtgfw" path="res://circuit/horizontal.tscn" id="10_dtj1k"]
+[ext_resource type="PackedScene" uid="uid://corhs6ymo3l5q" path="res://circuit/disruptor.tscn" id="11_as5ey"]
+[ext_resource type="PackedScene" uid="uid://b6v2gexvunu8p" path="res://circuit/stone slot.tscn" id="11_urtrx"]
+[ext_resource type="PackedScene" uid="uid://dn7pvnnoyktjx" path="res://circuit/right up.tscn" id="12_1kx2w"]
+[ext_resource type="PackedScene" uid="uid://e2d6kwu1bgkh" path="res://circuit/monolith not.tscn" id="12_yjme3"]
+[ext_resource type="PackedScene" uid="uid://dw6jyxmoye1vt" path="res://circuit/pylon off.tscn" id="14_5kihp"]
+[ext_resource type="PackedScene" uid="uid://cywqaoqhprcyu" path="res://circuit/dragon.tscn" id="20_6tffs"]
+[ext_resource type="PackedScene" uid="uid://cwi7s0cua5vt0" path="res://circuit/xor stone.tscn" id="20_p5wsd"]
+[ext_resource type="PackedScene" uid="uid://c23u3qmxhqr60" path="res://circuit/or stone.tscn" id="21_500lb"]
+[ext_resource type="PackedScene" uid="uid://bw2c421aeq6a7" path="res://art/character/player.tscn" id="23_d4h0y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_msqn5"]
+texture = ExtResource("3_1yrns")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16, -34, -16, 16, 34, 16, 34, 34, -34, 34)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(34, -34, 34, 34, -34, 34, -34, -34)
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(34, -34, 16.1716, -34, 16.4197, 34, 34, 34)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, 34, 34, 34, 34, -34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -15.9688, -34, -16.0646, 34, -34, 34)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(34, 1.05794, 34, -34, -34, -34, -34, 1.11362)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -15.9732, -34, -34, 34, -34, 34, 34, 15.9732, 34, 15.8492, -15.8244)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16.1354, 34, -16.1003, 34, -34)
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.6875, -15.9375, -15.9236, 34, -34, 34, -34, -34, 34, -34, 34, -15.9484)
+1:3/0 = 0
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1.06066, 34, 1.14905, 34, -34, -34, -34)
+3:3/0 = 0
+4:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o1v67"]
+texture = ExtResource("4_pqbrj")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 16.5, -34, 34, 34, 34, 34, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 34, -34, 34.5, 34, 16, 33.5)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16, -34, -16, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, 34, 1, 34, -10.5, -34, -10.5)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16, 34, -15.5, 34, -34)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -13.5, 5, 14, 5, 14, 1, 34, 1, 34, -11, -34, -10.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7oxq"]
+texture = ExtResource("5_ws7lc")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, 34, 34, 34, 34, 16.0646, -15.9762, 15.932, -16.0204, -34)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -27.625, -34, 34, 34, 34, 34, -34)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16.0477, -34, 34, -34, 34, 34, -34, 34, -34, 15.9074, 16.0126, 16.0477)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16.0781, -34, 34, -34, 34, 34, 16.0156, 34)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, 34, 34, 34, 34, -34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, 34, -15.9557, 34, -15.9557, -34)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 0.932659, 34, 1.04402, 34, -34, -34, -34)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16.0049, 15.7687, -16.0049, 16.0443, 34, 34, 34, 34, -34)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16.074, 34, -15.8986, 33.8229, -34)
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, 34, -15.7687, 34, -15.9262, -16.2412, 34, -15.8868, 34, -34)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1.10938, 34, 0.921875, 34, -34, -34, -34)
+3:3/0 = 0
+4:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qp3ge"]
+tile_size = Vector2i(68, 68)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_o1v67")
+sources/0 = SubResource("TileSetAtlasSource_msqn5")
+sources/2 = SubResource("TileSetAtlasSource_l7oxq")
+
+[node name="dragons_lair" type="Node2D"]
+script = ExtResource("1_kxx6o")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(403, 377)
+scale = Vector2(2.61328, 4.03906)
+texture = ExtResource("2_sdbgn")
+
+[node name="TileMap" type="TileMap" parent="TileMapLayer"]
+tile_set = SubResource("TileSet_qp3ge")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 262146, 1, 131080, 2, 0, 131078, 131074, 3, 131075, 2, 1, 131079, 262146, 1, 131076, 131074, 3, 65541, 262146, 0, 65542, 131074, 1, 65544, 196610, 1, 65540, 131074, 1, 65543, 262146, 0, 65539, 65538, 1, 7, 131074, 0, 8, 196610, 0, 4, 131074, 0, 3, 65538, 0, 5, 131074, 0, 6, 131074, 0, 196617, 262146, 0, 196616, 131074, 1, 196610, 131074, 1, 196611, 262146, 0, 196609, 2, 1, 131073, 65538, 0, 131074, 131074, 0, 131081, 131074, 0, 131082, 196610, 0, 196618, 2, 0, 262146, 131074, 3, 262147, 262146, 1, 262152, 131074, 3, 262153, 262146, 1, 196619, 131074, 0, 196608, 131074, 0, 327691, 262146, 1, 327690, 131074, 3, 327680, 131074, 3, 327681, 262146, 1, 262145, 262146, 0, 262144, 131074, 1, 262154, 131074, 1, 262155, 262146, 0, 196612, 262146, 2, 262148, 262146, 2, 262149, 262146, 2, 196613, 262146, 2, 196614, 262146, 2, 196615, 262146, 2, 262151, 262146, 2, 327689, 262146, 2, 327688, 262146, 2, 327687, 262146, 2, 327686, 262146, 2, 327685, 262146, 2, 327684, 262146, 2, 327683, 262146, 2, 327682, 262146, 2, 393216, 262146, 2, 393217, 262146, 2, 393218, 262146, 2, 393219, 262146, 2, 393220, 262146, 2, 393221, 262146, 2, 393222, 262146, 2, 393223, 262146, 2, 393224, 262146, 2, 393225, 262146, 2, 393226, 262146, 2, 393227, 262146, 2, 458763, 262146, 2, 458762, 262146, 2, 458761, 262146, 2, 458760, 262146, 2, 458759, 262146, 2, 458758, 262146, 2, 458757, 262146, 2, 458756, 262146, 2, 458755, 262146, 2, 458754, 262146, 2, 458753, 262146, 2, 458752, 262146, 2, 524288, 262146, 2, 524289, 262146, 2, 524290, 262146, 2, 524291, 262146, 2, 524292, 262146, 2, 524293, 262146, 2, 524294, 262146, 2, 524295, 262146, 2, 524296, 262146, 2, 524297, 262146, 2, 524298, 262146, 2, 524299, 262146, 2, 589835, 262146, 2, 589834, 262146, 2, 589833, 262146, 2, 589832, 262146, 2, 589831, 262146, 2, 589830, 262146, 2, 589829, 262146, 2, 589828, 262146, 2, 589827, 262146, 2, 589826, 262146, 2, 589825, 262146, 2, 589824, 262146, 2, 262150, 262146, 2, 458751, 262146, 2, 524287, 262146, 2, 589823, 262146, 2, 655359, 262146, 2, 524286, 262146, 2, 589822, 262146, 2, 655360, 262146, 2, 655361, 262146, 2, 655362, 262146, 2, 655363, 262146, 2, 655364, 262146, 2, 655365, 262146, 2, 655366, 262146, 2, 655367, 262146, 2, 655368, 262146, 2, 655369, 262146, 2, 655370, 262146, 2, 458764, 262146, 2, 524300, 262146, 2, 720897, 2, 2, 720898, 262146, 2, 720899, 262146, 2, 720900, 262146, 2, 720901, 262146, 2, 720902, 262146, 2, 720903, 262146, 2, 720904, 262146, 2, 720905, 262146, 2, 786436, 262146, 2, 786437, 262146, 2, 786438, 262146, 2, 851973, 262146, 3, 786439, 262146, 2, 851974, 262146, 3, 786435, 262146, 2, 786440, 262146, 2, 917509, 262146, 2, 917510, 262146, 2, 851975, 262146, 2, 851972, 262146, 2, 393228, 131074, 3, 393215, 262146, 1, 458750, 262146, 1, 327679, 262146, 0, 393214, 262146, 0, 327692, 131074, 1, 327693, 196610, 1, 393229, 196610, 1, 458765, 196610, 1, 524301, 196610, 1, 589836, 262146, 2, 655358, 262146, 2, 720895, 262146, 2, 655371, 262146, 2, 983045, 131074, 2, 983046, 131074, 2, 983047, 196610, 2, 917512, 196610, 2, 851977, 196610, 2, 786442, 196610, 2, 720907, 131074, 2, 720908, 196610, 2, 655373, 196610, 2, 983044, 65538, 2, 917507, 65538, 2, 851970, 65538, 2, 786430, 65538, 2, 720893, 65538, 2, 655357, 65538, 1, 589821, 65538, 1, 524285, 65538, 1, 458749, 65538, 1, 393213, 65538, 1, 327677, 65538, 0, 262142, 65538, 0, 262143, 131074, 0, 327678, 2, 1, 196620, 196610, 0, 262157, 196610, 0, 262156, 2, 0, 720894, 2, 2, 720896, 131074, 2, 786434, 2, 2, 851971, 2, 2, 917508, 2, 2, 917511, 2, 3, 851976, 2, 3, 786441, 2, 3, 720906, 2, 3, 655372, 2, 3, 589837, 196610, 1, 786431, 131074, 2, 786433, 65538, 2)
+
+[node name="entities" type="Node" parent="."]
+
+[node name="dl lever2" parent="entities" instance=ExtResource("6_t3w01")]
+position = Vector2(306, 782)
+
+[node name="dl lever" parent="entities" instance=ExtResource("6_t3w01")]
+position = Vector2(442, 782)
+
+[node name="dl right up" parent="entities" instance=ExtResource("12_1kx2w")]
+position = Vector2(238, 714)
+
+[node name="dl splitter" parent="entities" instance=ExtResource("8_ty11x")]
+position = Vector2(306, 714)
+
+[node name="dl and gate" parent="entities" instance=ExtResource("8_d36im")]
+position = Vector2(374, 714)
+
+[node name="dl splitter2" parent="entities" instance=ExtResource("8_ty11x")]
+position = Vector2(442, 714)
+
+[node name="dl left up" parent="entities" instance=ExtResource("6_526nd")]
+position = Vector2(510, 714)
+
+[node name="dl on pylon" parent="entities" instance=ExtResource("6_c3u2y")]
+position = Vector2(34, 646)
+
+[node name="dl left up2" parent="entities" instance=ExtResource("12_1kx2w")]
+position = Vector2(170, 646)
+
+[node name="dl left bend" parent="entities" instance=ExtResource("9_moust")]
+position = Vector2(238, 646)
+
+[node name="dl not gate" parent="entities" instance=ExtResource("12_yjme3")]
+position = Vector2(374, 646)
+
+[node name="dl right bend" parent="entities" instance=ExtResource("7_iwmo4")]
+position = Vector2(510, 646)
+
+[node name="dl right up2" parent="entities" instance=ExtResource("6_526nd")]
+position = Vector2(578, 646)
+
+[node name="dl off pylon" parent="entities" instance=ExtResource("14_5kihp")]
+position = Vector2(714, 646)
+
+[node name="dl lever3" parent="entities" instance=ExtResource("6_t3w01")]
+position = Vector2(-34, 578)
+
+[node name="dl right bend2" parent="entities" instance=ExtResource("7_iwmo4")]
+position = Vector2(34, 578)
+
+[node name="dl slot" parent="entities" instance=ExtResource("11_urtrx")]
+position = Vector2(102, 578)
+
+[node name="dl left bend2" parent="entities" instance=ExtResource("9_moust")]
+position = Vector2(170, 578)
+
+[node name="dl disruptor" parent="entities" instance=ExtResource("11_as5ey")]
+position = Vector2(374, 578)
+
+[node name="dl right bend3" parent="entities" instance=ExtResource("7_iwmo4")]
+position = Vector2(578, 578)
+
+[node name="dl slot2" parent="entities" instance=ExtResource("11_urtrx")]
+position = Vector2(646, 578)
+
+[node name="dl left bend3" parent="entities" instance=ExtResource("9_moust")]
+position = Vector2(714, 578)
+
+[node name="dl lever4" parent="entities" instance=ExtResource("6_t3w01")]
+position = Vector2(782, 578)
+
+[node name="dl right bend4" parent="entities" instance=ExtResource("7_iwmo4")]
+position = Vector2(-34, 510)
+
+[node name="dl and gate2" parent="entities" instance=ExtResource("8_d36im")]
+position = Vector2(34, 510)
+
+[node name="dl splitter3" parent="entities" instance=ExtResource("8_ty11x")]
+position = Vector2(102, 510)
+
+[node name="dl left up3" parent="entities" instance=ExtResource("6_526nd")]
+position = Vector2(170, 510)
+
+[node name="dl lever5" parent="entities" instance=ExtResource("6_tq5de")]
+position = Vector2(306, 510)
+
+[node name="dl lever6" parent="entities" instance=ExtResource("6_tq5de")]
+position = Vector2(442, 510)
+
+[node name="dl right up3" parent="entities" instance=ExtResource("12_1kx2w")]
+position = Vector2(578, 510)
+
+[node name="dl splitter4" parent="entities" instance=ExtResource("8_ty11x")]
+position = Vector2(646, 510)
+
+[node name="dl and gate3" parent="entities" instance=ExtResource("8_d36im")]
+position = Vector2(714, 510)
+
+[node name="dl left bend4" parent="entities" instance=ExtResource("9_moust")]
+position = Vector2(782, 510)
+
+[node name="dl disruptor2" parent="entities" instance=ExtResource("11_as5ey")]
+position = Vector2(34, 442)
+
+[node name="dl right bend5" parent="entities" instance=ExtResource("7_iwmo4")]
+position = Vector2(170, 442)
+
+[node name="dl and gate4" parent="entities" instance=ExtResource("8_d36im")]
+position = Vector2(238, 442)
+
+[node name="dl left bend5" parent="entities" instance=ExtResource("9_moust")]
+position = Vector2(306, 442)
+
+[node name="dl right bend6" parent="entities" instance=ExtResource("7_iwmo4")]
+position = Vector2(442, 442)
+
+[node name="dl and gate5" parent="entities" instance=ExtResource("8_d36im")]
+position = Vector2(510, 442)
+
+[node name="dl left bend6" parent="entities" instance=ExtResource("9_moust")]
+position = Vector2(578, 442)
+
+[node name="dl disruptor3" parent="entities" instance=ExtResource("11_as5ey")]
+position = Vector2(714, 442)
+
+[node name="dl right bend7" parent="entities" instance=ExtResource("7_iwmo4")]
+position = Vector2(238, 374)
+
+[node name="dl horizontal" parent="entities" instance=ExtResource("10_dtj1k")]
+position = Vector2(306, 374)
+
+[node name="dl and gate6" parent="entities" instance=ExtResource("8_d36im")]
+position = Vector2(374, 374)
+
+[node name="dl horizontal2" parent="entities" instance=ExtResource("10_dtj1k")]
+position = Vector2(442, 374)
+
+[node name="dl left bend7" parent="entities" instance=ExtResource("9_moust")]
+position = Vector2(510, 374)
+
+[node name="dl right bend8" parent="entities" instance=ExtResource("7_iwmo4")]
+position = Vector2(374, 306)
+
+[node name="dl left up4" parent="entities" instance=ExtResource("6_526nd")]
+position = Vector2(442, 306)
+
+[node name="dragon" parent="entities" instance=ExtResource("20_6tffs")]
+position = Vector2(408, 102)
+
+[node name="xor stone" parent="entities" instance=ExtResource("20_p5wsd")]
+position = Vector2(227, 594)
+
+[node name="or stone" parent="entities" instance=ExtResource("21_500lb")]
+position = Vector2(516, 586)
+
+[node name="gandalf" parent="entities" instance=ExtResource("7_j2hqf")]
+position = Vector2(380, 898)
+
+[node name="player" parent="entities" instance=ExtResource("23_d4h0y")]
+position = Vector2(438, 891)
+
+[node name="Camera2D" type="Camera2D" parent="entities/player"]
+limit_left = -200
+limit_top = 0
+limit_right = 950
+limit_bottom = 1100
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_offset = 0.2
+drag_vertical_offset = 0.2
+
+[connection signal="state_changed" from="entities/dl lever2" to="entities/dl right up" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever2" to="entities/dl splitter" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever2" to="entities/dl and gate" method="_change_left_state"]
+[connection signal="state_changed" from="entities/dl lever2" to="entities/dl left up2" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever2" to="entities/dl left bend" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever2" to="entities/dl slot" method="_change_right_state"]
+[connection signal="state_changed" from="entities/dl lever2" to="entities/dl left bend2" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever" to="entities/dl and gate" method="_change_right_state"]
+[connection signal="state_changed" from="entities/dl lever" to="entities/dl splitter2" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever" to="entities/dl left up" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever" to="entities/dl right bend" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever" to="entities/dl right up2" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever" to="entities/dl right bend3" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever" to="entities/dl slot2" method="_change_left_state"]
+[connection signal="monolith_changed" from="entities/dl and gate" to="entities/dl not gate" method="_change_state"]
+[connection signal="pylon_changed" from="entities/dl on pylon" to="entities/dl right bend2" method="_change_state"]
+[connection signal="pylon_changed" from="entities/dl on pylon" to="entities/dl slot" method="_change_left_state"]
+[connection signal="monolith_changed" from="entities/dl not gate" to="entities/dl disruptor" method="_change_state_special_case"]
+[connection signal="state_changed" from="entities/dl lever3" to="entities/dl right bend4" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever3" to="entities/dl and gate2" method="_change_left_state"]
+[connection signal="monolith_changed" from="entities/dl slot" to="entities/dl and gate2" method="_change_right_state"]
+[connection signal="monolith_changed" from="entities/dl slot" to="entities/dl splitter3" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl slot" to="entities/dl left up3" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl slot" to="entities/dl right bend5" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl slot" to="entities/dl and gate4" method="_change_left_state"]
+[connection signal="disruptor_activated" from="entities/dl disruptor" to="entities/dragon" method="_disrupt_dragon"]
+[connection signal="disruptor_activated" from="entities/dl disruptor" to="entities/player" method="_on_disruptor_activated"]
+[connection signal="monolith_changed" from="entities/dl slot2" to="entities/dl right up3" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl slot2" to="entities/dl splitter4" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl slot2" to="entities/dl and gate3" method="_change_left_state"]
+[connection signal="monolith_changed" from="entities/dl slot2" to="entities/dl and gate5" method="_change_right_state"]
+[connection signal="monolith_changed" from="entities/dl slot2" to="entities/dl left bend6" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever4" to="entities/dl and gate3" method="_change_right_state"]
+[connection signal="state_changed" from="entities/dl lever4" to="entities/dl left bend4" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl and gate2" to="entities/dl disruptor2" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever5" to="entities/dl and gate4" method="_change_right_state"]
+[connection signal="state_changed" from="entities/dl lever5" to="entities/dl left bend5" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever6" to="entities/dl right bend6" method="_change_state"]
+[connection signal="state_changed" from="entities/dl lever6" to="entities/dl and gate5" method="_change_left_state"]
+[connection signal="monolith_changed" from="entities/dl and gate3" to="entities/dl disruptor3" method="_change_state"]
+[connection signal="disruptor_activated" from="entities/dl disruptor2" to="entities/dragon" method="_disrupt_dragon"]
+[connection signal="disruptor_activated" from="entities/dl disruptor2" to="entities/player" method="_on_disruptor_activated"]
+[connection signal="monolith_changed" from="entities/dl and gate4" to="entities/dl right bend7" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl and gate4" to="entities/dl horizontal" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl and gate4" to="entities/dl and gate6" method="_change_left_state"]
+[connection signal="monolith_changed" from="entities/dl and gate5" to="entities/dl and gate6" method="_change_right_state"]
+[connection signal="monolith_changed" from="entities/dl and gate5" to="entities/dl horizontal2" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl and gate5" to="entities/dl left bend7" method="_change_state"]
+[connection signal="disruptor_activated" from="entities/dl disruptor3" to="entities/dragon" method="_disrupt_dragon"]
+[connection signal="disruptor_activated" from="entities/dl disruptor3" to="entities/player" method="_on_disruptor_activated"]
+[connection signal="monolith_changed" from="entities/dl and gate6" to="entities/dl right bend8" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl and gate6" to="entities/dl left up4" method="_change_state"]
+[connection signal="monolith_changed" from="entities/dl and gate6" to="entities/dragon" method="_change_state"]

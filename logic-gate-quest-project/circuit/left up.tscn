@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://clprendp036mt"]
+
+[ext_resource type="Texture2D" uid="uid://cxahvwfdasn3c" path="res://art/objects/wire/left up off.png" id="1_fcsvv"]
+[ext_resource type="Script" path="res://scripts/left_up.gd" id="2_ye1kn"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_fcsvv")
+script = ExtResource("2_ye1kn")

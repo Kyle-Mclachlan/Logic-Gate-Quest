@@ -1,0 +1,192 @@
+[gd_scene load_steps=10 format=3 uid="uid://bt4wwiyq8x3g1"]
+
+[ext_resource type="Script" path="res://menus/settings.gd" id="1_xgku2"]
+[ext_resource type="Texture2D" uid="uid://c2oxnolbuol84" path="res://art/backgrounds/level select back.png" id="2_hvbqh"]
+[ext_resource type="FontFile" uid="uid://buyb1f51jx7j6" path="res://art/fonts/MedievalSharp-Bold.ttf" id="3_5nlit"]
+[ext_resource type="FontFile" uid="uid://bhwhajtswh3f" path="res://art/fonts/Augusta.ttf" id="3_fk3cj"]
+[ext_resource type="Texture2D" uid="uid://b43f31u0517ke" path="res://art/miscellaneos/check.png" id="4_5sfac"]
+[ext_resource type="Texture2D" uid="uid://csa85m4px7fhd" path="res://art/miscellaneos/grabber.png" id="4_hs46v"]
+[ext_resource type="Texture2D" uid="uid://bnt3q7swy4sya" path="res://art/miscellaneos/uncheck.png" id="5_aj3ed"]
+[ext_resource type="Texture2D" uid="uid://cbf46sak3gph3" path="res://art/miscellaneos/grabber H.png" id="5_k1pc8"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_tnkwl"]
+content_margin_left = 0.0
+content_margin_right = 0.0
+color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xgku2")
+
+[node name="LevelSelectBack" type="Sprite2D" parent="."]
+position = Vector2(384, 216)
+texture = ExtResource("2_hvbqh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 27.0
+offset_right = 447.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_fk3cj")
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="level select" type="Button" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 375.0
+offset_right = 324.0
+offset_bottom = 408.0
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_5nlit")
+theme_override_font_sizes/font_size = 20
+text = "Go To Level Select
+"
+flat = true
+alignment = 0
+
+[node name="title screen" type="Button" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 375.0
+offset_right = 661.0
+offset_bottom = 408.0
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_pressed_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0.866667, 0.764706, 0.227451, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_5nlit")
+theme_override_font_sizes/font_size = 20
+text = "Return To Title Screen
+"
+flat = true
+alignment = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 112.0
+offset_right = 529.0
+offset_bottom = 317.0
+
+[node name="fullscreen_toggle" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_hover_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_focus_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_outline_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_normal_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_focus_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_hover_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_disabled_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_5nlit")
+theme_override_font_sizes/font_size = 20
+theme_override_icons/checked = ExtResource("4_5sfac")
+theme_override_icons/unchecked = ExtResource("5_aj3ed")
+button_pressed = true
+text = "Toggle FullScreen Mode"
+
+[node name="music label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_5nlit")
+theme_override_font_sizes/font_size = 20
+text = "  Music Volume :"
+
+[node name="music slider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_hs46v")
+theme_override_icons/grabber_highlight = ExtResource("5_k1pc8")
+theme_override_styles/slider = SubResource("StyleBoxLine_tnkwl")
+step = 5.0
+value = 50.0
+
+[node name="sfx label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_5nlit")
+theme_override_font_sizes/font_size = 20
+text = "  Sound Effect Volume :"
+
+[node name="sfx slider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_hs46v")
+theme_override_icons/grabber_highlight = ExtResource("5_k1pc8")
+theme_override_styles/slider = SubResource("StyleBoxLine_tnkwl")
+step = 5.0
+value = 50.0
+
+[node name="truth_table_toggle" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_hover_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_focus_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_outline_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_normal_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_focus_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_hover_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_disabled_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_5nlit")
+theme_override_font_sizes/font_size = 20
+theme_override_icons/checked = ExtResource("4_5sfac")
+theme_override_icons/unchecked = ExtResource("5_aj3ed")
+button_pressed = true
+text = "Toggle Truth Tables"
+
+[node name="annotation_toggle" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_hover_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_focus_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/font_outline_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_normal_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_focus_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_hover_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_colors/icon_disabled_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_5nlit")
+theme_override_font_sizes/font_size = 20
+theme_override_icons/checked = ExtResource("4_5sfac")
+theme_override_icons/unchecked = ExtResource("5_aj3ed")
+button_pressed = true
+text = "Toggle Annotated Circuit"
+
+[connection signal="pressed" from="level select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="title screen" to="." method="_on_title_screen_pressed"]
+[connection signal="toggled" from="VBoxContainer/fullscreen_toggle" to="." method="_on_fullscreen_toggle_toggled"]
+[connection signal="value_changed" from="VBoxContainer/music slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/sfx slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="VBoxContainer/truth_table_toggle" to="." method="_on_truth_table_toggle_toggled"]
+[connection signal="toggled" from="VBoxContainer/annotation_toggle" to="." method="_on_annotation_toggle_toggled"]

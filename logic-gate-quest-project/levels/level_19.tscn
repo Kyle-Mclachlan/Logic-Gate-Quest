@@ -1,0 +1,217 @@
+[gd_scene load_steps=23 format=3 uid="uid://dedwehmbbs5g"]
+
+[ext_resource type="Script" path="res://scripts/level_getter.gd" id="1_5jkll"]
+[ext_resource type="Texture2D" uid="uid://cswjhivdhxdr0" path="res://art/backgrounds/background.png" id="2_ue2b1"]
+[ext_resource type="Texture2D" uid="uid://dorrei4qkcue" path="res://art/tileset/copper tileset.png" id="3_8gm64"]
+[ext_resource type="Texture2D" uid="uid://da50fbbwrt10s" path="res://art/tileset/gold tileset.png" id="4_mxf6v"]
+[ext_resource type="Texture2D" uid="uid://pwkikvwbjydt" path="res://art/tileset/silver tileset.png" id="5_tojn6"]
+[ext_resource type="Texture2D" uid="uid://bxyo0y0q2pgrv" path="res://art/tileset/platinum tileset.png" id="6_jir81"]
+[ext_resource type="Texture2D" uid="uid://blg82hsfbcoyn" path="res://art/tileset/iron tileset.png" id="7_xvhny"]
+[ext_resource type="PackedScene" uid="uid://cqjq8lc7saepo" path="res://circuit/lever.tscn" id="8_l7yre"]
+[ext_resource type="PackedScene" uid="uid://corhs6ymo3l5q" path="res://circuit/disruptor.tscn" id="9_cs5ni"]
+[ext_resource type="PackedScene" uid="uid://drs0id18vcdce" path="res://circuit/right bend.tscn" id="9_vmadx"]
+[ext_resource type="PackedScene" uid="uid://dnb8jofsuamjs" path="res://hud/dialog_prompt.tscn" id="14_rp6yx"]
+[ext_resource type="PackedScene" uid="uid://c1xennrbxtgfw" path="res://circuit/horizontal.tscn" id="14_voqy1"]
+[ext_resource type="PackedScene" uid="uid://jrf62ji20o7o" path="res://circuit/outlet.tscn" id="17_0bdb1"]
+[ext_resource type="PackedScene" uid="uid://huxko32efm1x" path="res://circuit/gate.tscn" id="18_ybdq1"]
+[ext_resource type="PackedScene" uid="uid://b1p7enjdkbjix" path="res://art/character/gandalf.tscn" id="22_cyd5y"]
+[ext_resource type="PackedScene" uid="uid://bw2c421aeq6a7" path="res://art/character/player.tscn" id="23_xgs28"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kmpf1"]
+texture = ExtResource("3_8gm64")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 34, -34, 34, 34, 16, 34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16, -34, -16, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1.5, 34, 1, 34, -11, -34, -11)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, 33.5, -34, 34, -15.5, -34, -16.5)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -14, 6, 14, 5.5, 14, 1, 34, 1, 34, -10.5, -34, -10.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxc1q"]
+texture = ExtResource("4_mxf6v")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 16.5, -34, 34, 34, 34, 34, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 34, -34, 34, 34, 16, 33.5)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16, -34, -16, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, 34, 1, 34, -10.5, -34, -10.5)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16, 34, -15.5, 34, -34)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -13.5, 5, 14, 5, 14, 1, 34, 1, 34, -11, -34, -10.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jau61"]
+texture = ExtResource("5_tojn6")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 16.5, 34, 34, 34, 34, -34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, 34, -16, 34, -16, -34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, 34, 1, 34.5, -9.5, -34, -10)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, 34, -34, 34, -16, -34, -16)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -14, 6, 14, 6, 14, 1, 34, 1, 34, -10, -34, -10)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1n3t"]
+texture = ExtResource("6_jir81")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 16, -34, 34, 34, 34, 34, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(34, -34, 16, -34, 16, 34, 34, 34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -15.5, -34, -15.5, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 0.5, 34, 1, 34, -10.5, -34, -11)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16, 34, -16, 34, -34)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1.5, -14, 6, 14, 6, 14.5, 1, 34, 1.5, 34, -11.5, -34, -12.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1h4qi"]
+texture = ExtResource("7_xvhny")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16.0476, -34, 34, -34, 34, 34, 15.75, 34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16.0049, -34, -15.8081, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1.22055, 34, 1.1418, 34, -21.0643, -34, -21.6943)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, 34, -34, 34, -16.1821, -34, -16.0246)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 0.964626, -14.0363, 1.004, -14.1151, 5.84682, 13.8788, 5.88619, 14.1938, 1.004, 34, 0.925255, 34, -17.8161, -34, -17.6192)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oiiqo"]
+tile_size = Vector2i(68, 68)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_xxc1q")
+sources/2 = SubResource("TileSetAtlasSource_jau61")
+sources/0 = SubResource("TileSetAtlasSource_kmpf1")
+sources/3 = SubResource("TileSetAtlasSource_q1n3t")
+sources/4 = SubResource("TileSetAtlasSource_1h4qi")
+
+[node name="Level19" type="Node2D"]
+script = ExtResource("1_5jkll")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(307, 272)
+scale = Vector2(2.42578, 3.62891)
+texture = ExtResource("2_ue2b1")
+
+[node name="TileMap" type="TileMap" parent="TileMapLayer"]
+tile_set = SubResource("TileSet_oiiqo")
+format = 2
+layer_0/tile_data = PackedInt32Array(2, 4, 0, 3, 65540, 0, 4, 65540, 0, 5, 65540, 0, 6, 65540, 0, 7, 65540, 0, 8, 65540, 0, 65544, 196612, 0, 131080, 196612, 1, 196616, 196612, 2, 262152, 196612, 2, 327688, 196612, 3, 393218, 4, 1, 393219, 196612, 2, 393220, 196612, 2, 393221, 196612, 2, 393222, 196612, 2, 393224, 196612, 2, 65538, 4, 1, 65539, 196612, 0, 65540, 65540, 1, 65541, 196612, 0, 65542, 65540, 1, 65543, 196612, 0, 131079, 196612, 1, 131078, 65540, 3, 131077, 196612, 1, 131076, 65540, 3, 131075, 196612, 1, 131074, 4, 1, 327687, 196612, 2, 262151, 196612, 2, 196615, 196612, 2, 196614, 196612, 2, 196613, 196612, 2, 196612, 196612, 2, 196611, 196612, 2, 196610, 4, 1, 327682, 4, 1, 327683, 196612, 2, 327684, 196612, 2, 327685, 196612, 2, 262146, 4, 1, 262147, 196612, 2, 262148, 196612, 2, 262149, 196612, 2, 393225, 196612, 2, 327689, 196612, 2, 262153, 196612, 2, 196617, 196612, 2, 131081, 65540, 3, 10, 131076, 0, 65545, 65540, 1, 9, 65540, 0, 65546, 131076, 1, 131082, 131076, 1, 196618, 131076, 1, 262154, 131076, 1, 327690, 131076, 1, 393226, 131076, 1, 458761, 65540, 2, 458760, 65540, 2, 458759, 65540, 2, 458758, 65540, 2, 458757, 65540, 2, 458756, 65540, 2, 458755, 65540, 2, 458754, 4, 2, 458762, 131076, 2, 393223, 196612, 2, 327686, 196612, 2, 262150, 196612, 2)
+
+[node name="entities" type="Node" parent="."]
+
+[node name="lv19 lever" parent="entities" instance=ExtResource("8_l7yre")]
+position = Vector2(442, 371)
+
+[node name="lv19 disruptor" parent="entities" instance=ExtResource("9_cs5ni")]
+position = Vector2(442, 303)
+
+[node name="lv19 lever2" parent="entities" instance=ExtResource("8_l7yre")]
+position = Vector2(306, 238)
+
+[node name="lv19 right bend" parent="entities" instance=ExtResource("9_vmadx")]
+position = Vector2(306, 170)
+
+[node name="lv19 horizontal" parent="entities" instance=ExtResource("14_voqy1")]
+position = Vector2(374, 170)
+
+[node name="lv19 outlet" parent="entities" instance=ExtResource("17_0bdb1")]
+position = Vector2(442, 170)
+
+[node name="lv19 gate" parent="entities" instance=ExtResource("18_ybdq1")]
+position = Vector2(578, 136)
+
+[node name="disruptor intro" parent="entities" instance=ExtResource("14_rp6yx")]
+position = Vector2(574, 373)
+
+[node name="gandalf" parent="entities" instance=ExtResource("22_cyd5y")]
+position = Vector2(532, 356)
+
+[node name="player" parent="entities" instance=ExtResource("23_xgs28")]
+position = Vector2(580, 345)
+
+[node name="Camera2D" type="Camera2D" parent="entities/player"]
+limit_left = 100
+limit_top = 0
+limit_right = 800
+limit_bottom = 550
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.2
+drag_vertical_offset = 0.2
+
+[connection signal="state_changed" from="entities/lv19 lever" to="entities/lv19 disruptor" method="_change_state"]
+[connection signal="disruptor_activated" from="entities/lv19 disruptor" to="entities/lv19 gate" method="_disrupt_gate"]
+[connection signal="disruptor_activated" from="entities/lv19 disruptor" to="entities/player" method="_on_disruptor_activated"]
+[connection signal="state_changed" from="entities/lv19 lever2" to="entities/lv19 right bend" method="_change_state"]
+[connection signal="state_changed" from="entities/lv19 lever2" to="entities/lv19 horizontal" method="_change_state"]
+[connection signal="state_changed" from="entities/lv19 lever2" to="entities/lv19 outlet" method="_change_state"]
+[connection signal="state_changed" from="entities/lv19 lever2" to="entities/lv19 gate" method="_change_gate_state"]
+[connection signal="dialog_message" from="entities/disruptor intro" to="entities/player" method="_show_dialog"]

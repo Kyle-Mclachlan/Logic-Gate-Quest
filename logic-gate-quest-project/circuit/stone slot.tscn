@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6v2gexvunu8p"]
+
+[ext_resource type="Script" path="res://scripts/stone_slot.gd" id="1_fhhhe"]
+[ext_resource type="Texture2D" uid="uid://drdnoa2aijuy4" path="res://art/objects/moveableMonoliths/i slot off.png" id="2_hpcia"]
+[ext_resource type="FontFile" uid="uid://b4tuvvqas2iw8" path="res://art/fonts/alagard.ttf" id="3_6750e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o3k8m"]
+radius = 25.02
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["slot"]]
+script = ExtResource("1_fhhhe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hpcia")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_o3k8m")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -86.0
+offset_top = 24.0
+offset_right = 86.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_6750e")
+text = "Slot"
+horizontal_alignment = 1

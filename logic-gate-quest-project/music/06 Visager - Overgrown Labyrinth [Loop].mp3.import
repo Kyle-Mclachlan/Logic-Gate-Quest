@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crndeofq6md7h"
+path="res://.godot/imported/06 Visager - Overgrown Labyrinth [Loop].mp3-84745fde5a2df824ba32495022bdfd33.mp3str"
+
+[deps]
+
+source_file="res://music/06 Visager - Overgrown Labyrinth [Loop].mp3"
+dest_files=["res://.godot/imported/06 Visager - Overgrown Labyrinth [Loop].mp3-84745fde5a2df824ba32495022bdfd33.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

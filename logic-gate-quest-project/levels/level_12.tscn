@@ -1,0 +1,212 @@
+[gd_scene load_steps=23 format=3 uid="uid://31shne6ugd2s"]
+
+[ext_resource type="Texture2D" uid="uid://cswjhivdhxdr0" path="res://art/backgrounds/background.png" id="1_32gdg"]
+[ext_resource type="Script" path="res://scripts/level_getter.gd" id="1_p8il3"]
+[ext_resource type="Texture2D" uid="uid://dorrei4qkcue" path="res://art/tileset/copper tileset.png" id="2_oj33x"]
+[ext_resource type="Texture2D" uid="uid://da50fbbwrt10s" path="res://art/tileset/gold tileset.png" id="3_3il6j"]
+[ext_resource type="Texture2D" uid="uid://pwkikvwbjydt" path="res://art/tileset/silver tileset.png" id="4_8i3f7"]
+[ext_resource type="Texture2D" uid="uid://bxyo0y0q2pgrv" path="res://art/tileset/platinum tileset.png" id="5_3ds5s"]
+[ext_resource type="PackedScene" uid="uid://cqjq8lc7saepo" path="res://circuit/lever.tscn" id="6_fjfew"]
+[ext_resource type="PackedScene" uid="uid://e2d6kwu1bgkh" path="res://circuit/monolith not.tscn" id="7_bxr24"]
+[ext_resource type="PackedScene" uid="uid://drs0id18vcdce" path="res://circuit/right bend.tscn" id="8_al0x5"]
+[ext_resource type="PackedScene" uid="uid://oyoyrc388a7g" path="res://circuit/monolith and.tscn" id="9_1b30a"]
+[ext_resource type="PackedScene" uid="uid://bog1kbq7r5agl" path="res://circuit/left bend.tscn" id="10_umlnb"]
+[ext_resource type="PackedScene" uid="uid://c1xennrbxtgfw" path="res://circuit/horizontal.tscn" id="11_u7ovv"]
+[ext_resource type="PackedScene" uid="uid://jrf62ji20o7o" path="res://circuit/outlet.tscn" id="12_mnt87"]
+[ext_resource type="PackedScene" uid="uid://huxko32efm1x" path="res://circuit/gate.tscn" id="13_5sau8"]
+[ext_resource type="PackedScene" uid="uid://b1p7enjdkbjix" path="res://art/character/gandalf.tscn" id="14_ql1nf"]
+[ext_resource type="PackedScene" uid="uid://bw2c421aeq6a7" path="res://art/character/player.tscn" id="15_ae26i"]
+[ext_resource type="PackedScene" uid="uid://dnb8jofsuamjs" path="res://hud/dialog_prompt.tscn" id="15_p7551"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7rfc"]
+texture = ExtResource("2_oj33x")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 34, -34, 34, 34, 16, 34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16, -34, -16, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1.5, 34, 1, 34, -11, -34, -11)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, 33.5, -34, 34, -15.5, -34, -16.5)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -14, 6, 14, 5.5, 14, 1, 34, 1, 34, -10.5, -34, -10.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8agga"]
+texture = ExtResource("3_3il6j")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 16.5, -34, 34, 34, 34, 34, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 34, -34, 34, 34, 16, 33.5)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -16, -34, -16, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, 34, 1, 34, -10.5, -34, -10.5)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16, 34, -15.5, 34, -34)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -13.5, 5, 14, 5, 14, 1, 34, 1, 34, -11, -34, -10.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7kiu"]
+texture = ExtResource("4_8i3f7")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -34, 16.5, 34, 34, 34, 34, -34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, 34, -16, 34, -16, -34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, 34, 1, 34.5, -9.5, -34, -10)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, 34, -34, 34, -16, -34, -16)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1, -14, 6, 14, 6, 14, 1, 34, 1, 34, -10, -34, -10)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7qul"]
+texture = ExtResource("5_3ds5s")
+texture_region_size = Vector2i(68, 68)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 16, -34, 34, 34, 34, 34, 16)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(34, -34, 16, -34, 16, 34, 34, 34)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -15.5, -34, -15.5, 34, -34, 34)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 0.5, 34, 1, 34, -10.5, -34, -11)
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, -34, -34, -16, 34, -16, 34, -34)
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34, 1, -14, 1.5, -14, 6, 14, 6, 14.5, 1, 34, 1.5, 34, -11.5, -34, -12.5)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y02vx"]
+tile_size = Vector2i(68, 68)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_8agga")
+sources/2 = SubResource("TileSetAtlasSource_p7kiu")
+sources/0 = SubResource("TileSetAtlasSource_y7rfc")
+sources/3 = SubResource("TileSetAtlasSource_r7qul")
+
+[node name="Level12" type="Node2D"]
+script = ExtResource("1_p8il3")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="TileMapLayer"]
+position = Vector2(307, 272)
+scale = Vector2(2.42578, 3.62891)
+texture = ExtResource("1_32gdg")
+
+[node name="TileMap" type="TileMap" parent="TileMapLayer"]
+tile_set = SubResource("TileSet_y02vx")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 131072, 0, 65544, 131072, 1, 131080, 131072, 1, 196616, 131072, 1, 262152, 131072, 1, 327688, 131072, 1, 65536, 0, 1, 131072, 0, 1, 196608, 0, 1, 262144, 0, 1, 327680, 0, 1, 393217, 196608, 2, 393218, 196608, 2, 393219, 196608, 2, 393220, 196608, 2, 393221, 196608, 2, 393222, 196608, 2, 393223, 196608, 2, 393224, 131072, 1, 393216, 0, 1, 65537, 196608, 0, 65538, 65536, 1, 65539, 131072, 3, 65540, 131072, 3, 65541, 65536, 1, 65542, 196608, 0, 65543, 196608, 0, 131079, 196608, 1, 131078, 196608, 1, 131077, 65536, 3, 131076, 196608, 1, 131075, 196608, 1, 131074, 65536, 3, 131073, 196608, 1, 327686, 196608, 2, 327687, 196608, 2, 262151, 196608, 2, 196615, 196608, 2, 196614, 196608, 2, 196613, 196608, 2, 196612, 196608, 2, 196611, 196608, 2, 196610, 196608, 2, 196609, 196608, 2, 262145, 196608, 2, 327681, 196608, 2, 327682, 196608, 2, 327683, 196608, 2, 327684, 196608, 2, 327685, 196608, 2, 262146, 196608, 2, 262147, 196608, 2, 262148, 196608, 2, 262149, 196608, 2, 262150, 196608, 2, 1, 65536, 0, 458752, 0, 1, 458760, 131072, 1, 458759, 196608, 2, 458758, 196608, 3, 458757, 196608, 2, 458756, 196608, 2, 458755, 196608, 2, 458754, 196608, 2, 458753, 196608, 2, 524296, 131072, 2, 524295, 65536, 2, 524294, 65536, 2, 524293, 65536, 2, 524292, 65536, 2, 524291, 65536, 2, 524290, 65536, 2, 524289, 65536, 2, 524288, 0, 2)
+
+[node name="entities" type="Node" parent="."]
+
+[node name="lv12 lever" parent="entities" instance=ExtResource("6_fjfew")]
+position = Vector2(170, 442)
+
+[node name="lv12 lever 2" parent="entities" instance=ExtResource("6_fjfew")]
+position = Vector2(306, 442)
+
+[node name="lv12 monolith 1" parent="entities" instance=ExtResource("7_bxr24")]
+position = Vector2(170, 374)
+
+[node name="lv12 monolith 2" parent="entities" instance=ExtResource("7_bxr24")]
+position = Vector2(306, 374)
+
+[node name="lv12 right bend" parent="entities" instance=ExtResource("8_al0x5")]
+position = Vector2(170, 306)
+
+[node name="lv12 monolith 3" parent="entities" instance=ExtResource("9_1b30a")]
+position = Vector2(238, 306)
+
+[node name="lv12 left bend" parent="entities" instance=ExtResource("10_umlnb")]
+position = Vector2(306, 306)
+
+[node name="lv12 monolith 4" parent="entities" instance=ExtResource("7_bxr24")]
+position = Vector2(238, 238)
+
+[node name="lv12 right bend 2" parent="entities" instance=ExtResource("8_al0x5")]
+position = Vector2(238, 170)
+
+[node name="lv12 horizontal" parent="entities" instance=ExtResource("11_u7ovv")]
+position = Vector2(306, 170)
+
+[node name="lv12 outlet" parent="entities" instance=ExtResource("12_mnt87")]
+position = Vector2(374, 170)
+
+[node name="lv12 gate" parent="entities" instance=ExtResource("13_5sau8")]
+position = Vector2(442, 136)
+
+[node name="lv12 dialog" parent="entities" instance=ExtResource("15_p7551")]
+position = Vector2(445, 508)
+
+[node name="gandalf" parent="entities" instance=ExtResource("14_ql1nf")]
+position = Vector2(388, 483)
+
+[node name="player" parent="entities" instance=ExtResource("15_ae26i")]
+position = Vector2(443, 479)
+
+[node name="Camera2D" type="Camera2D" parent="entities/player"]
+limit_left = -50
+limit_top = 0
+limit_right = 700
+limit_bottom = 625
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.2
+drag_vertical_offset = 0.2
+
+[connection signal="state_changed" from="entities/lv12 lever" to="entities/lv12 monolith 1" method="_change_state"]
+[connection signal="state_changed" from="entities/lv12 lever 2" to="entities/lv12 monolith 2" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv12 monolith 1" to="entities/lv12 right bend" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv12 monolith 1" to="entities/lv12 monolith 3" method="_change_left_state"]
+[connection signal="monolith_changed" from="entities/lv12 monolith 2" to="entities/lv12 monolith 3" method="_change_right_state"]
+[connection signal="monolith_changed" from="entities/lv12 monolith 2" to="entities/lv12 left bend" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv12 monolith 3" to="entities/lv12 monolith 4" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv12 monolith 4" to="entities/lv12 right bend 2" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv12 monolith 4" to="entities/lv12 horizontal" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv12 monolith 4" to="entities/lv12 outlet" method="_change_state"]
+[connection signal="monolith_changed" from="entities/lv12 monolith 4" to="entities/lv12 gate" method="_change_gate_state"]
+[connection signal="dialog_message" from="entities/lv12 dialog" to="entities/player" method="_show_dialog"]

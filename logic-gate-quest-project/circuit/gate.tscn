@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://huxko32efm1x"]
+
+[ext_resource type="Script" path="res://scripts/gate.gd" id="1_ia3na"]
+[ext_resource type="Texture2D" uid="uid://c4l3wa15y6iq3" path="res://art/objects/gate/gate closed.png" id="2_5mpe6"]
+[ext_resource type="Texture2D" uid="uid://wknu22ygbyt0" path="res://art/objects/gate/gate mid 2.png" id="3_jsurv"]
+[ext_resource type="Texture2D" uid="uid://bnaupk8pf7tca" path="res://art/objects/gate/gate mid 1.png" id="4_o504l"]
+[ext_resource type="Texture2D" uid="uid://bojj3bppb6jil" path="res://art/objects/gate/gate open.png" id="4_y3qvk"]
+[ext_resource type="AudioStream" uid="uid://gxl42hneq5hk" path="res://sound effects/gate.mp3" id="6_noprn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kce53"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y3qvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jsurv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o504l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5mpe6")
+}],
+"loop": false,
+"name": &"close",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5mpe6")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y3qvk")
+}],
+"loop": false,
+"name": &"hold open",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5mpe6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o504l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jsurv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y3qvk")
+}],
+"loop": false,
+"name": &"open",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bfgr"]
+size = Vector2(52, 37)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_puy5h"]
+radius = 5.0
+height = 52.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_ia3na")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kce53")
+animation = &"closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 18.5)
+shape = SubResource("RectangleShape2D_2bfgr")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_puy5h")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="gate rattle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_noprn")
+volume_db = -3.0
+bus = &"sfx"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

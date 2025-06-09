@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw6jyxmoye1vt"]
+
+[ext_resource type="Script" path="res://scripts/pylon_off.gd" id="1_a0xky"]
+[ext_resource type="Texture2D" uid="uid://cjvbt5gvrmq3w" path="res://art/objects/power/pylon off.png" id="1_jd0u0"]
+[ext_resource type="FontFile" uid="uid://b4tuvvqas2iw8" path="res://art/fonts/alagard.ttf" id="3_ufyx1"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_a0xky")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-11, 14, -16, 14, -17, 15, -17, 18, 17, 18, 17, 15, 16, 14, 11, 14, 11, 6, 10, 5, 7, 5, 7, -4, 6, -7, 5, -9, 4, -11, 2, -13, 1, -14, -1, -14, -2, -13, -4, -11, -5, -9, -6, -7, -7, -4, -7, 5, -10, 5, -11, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jd0u0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -35.0
+offset_top = 20.0
+offset_right = 35.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_ufyx1")
+text = "Off Pylon"
